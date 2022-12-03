@@ -7,10 +7,12 @@
 // ["1234", "1567", "-2", "computer science"] -> ["-2"]
 // ["Russia", "Denmark", "Kazan"] -> []
 
+//пользователь задает нужное количество строк в массиве через консоль
 Console.Write("Введите нужное количество строк в массиве: ");
-int size = Convert.ToInt32(Console.ReadLine()); //пользователь указывает нужное количество строк в массиве через консоль
+int size = Convert.ToInt32(Console.ReadLine()); 
 
-string[] CreatArray(int number) //пользователь задает строки для массива через консоль
+//пользователь задает строки для массива через консоль
+string[] CreatArray(int number) 
 {
     string[] array = new string[number];
     for (int i = 0; i < array.Length; i++)
@@ -21,7 +23,8 @@ string[] CreatArray(int number) //пользователь задает стро
     return array;
 }
 
-string[] ResultArray(string[] arr) // формируется новый массив из слов, длина которых 3 и менее символа
+// формируется новый массив из слов, длина которых 3 и менее символа
+string[] ResultArray(string[] arr) 
 {
     int pos = 0;
     int len = 3;
@@ -33,8 +36,8 @@ string[] ResultArray(string[] arr) // формируется новый масс
             newArray[pos] = arr[i];
             pos++;
         }
-    }
-    return newArray.Where(pos => !string.IsNullOrWhiteSpace(pos)).ToArray(); // исключение элементов с пустыми строками из массива
+    }      // исключение элементов с пустыми строками из массива
+    return newArray.Where(pos => !string.IsNullOrWhiteSpace(pos)).ToArray(); 
 }
 
 void PrintArray(string[] arr) // вывод пользовательского массива в консоль
@@ -67,5 +70,6 @@ if (size > 0)
     PrintArray(initialArray);
     string[] resultArray = ResultArray(initialArray);
     PrintResultArray(resultArray);
+    Console.WriteLine();
 }
 else Console.WriteLine("Ошибка. Неверное значение количества строк массива!");
