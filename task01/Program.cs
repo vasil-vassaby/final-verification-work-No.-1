@@ -51,13 +51,13 @@ void PrintArray(string[] arr) // вывод пользовательского �
     Console.Write("]");
 }
 
-void PrintResultArray(string[] arr) // вывод результирующего массива в консоль
+void PrintResultArray(string[] newArr) // вывод результирующего массива в консоль
 {
     Console.Write(" -> ");
     Console.Write("[");
-    for (int i = 0; i < arr.Length; i++)
+    for (int i = 0; i < newArr.Length; i++)
     {
-        Console.Write(i < arr.Length - 1 ? $"{arr[i]}, " : $"{arr[i]}");
+        Console.Write(i < newArr.Length - 1 ? $"{newArr[i]}, " : $"{newArr[i]}");
     }
     Console.Write("]");
 }
